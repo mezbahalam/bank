@@ -13,7 +13,7 @@ ActiveAdmin.register Customer do
 #   permitted
 # end
 
-  permit_params :account, :balance, :secret, :birthday
+  permit_params :account, :balance, :secret, :birthday, :password, :password_confirmation
 
 
   index do
@@ -21,7 +21,6 @@ ActiveAdmin.register Customer do
     column :balance
     column :account
     column :birthday
-    column :secret
     actions
   end
 
@@ -31,17 +30,17 @@ ActiveAdmin.register Customer do
       f.input  :balance
       f.input  :account
       f.input  :birthday
-      f.input  :secret
+      f.input :password
+      f.input :password_confirmation
     end
     f.actions
   end
 
   show do
     attributes_table do
-      row(:balance) if offender.balance?
-      row(:account) if offender.account?
-      row(:birthday) if offender.birthday?
-      row(:secret) if offender.secret?
+      row(:balance) if customer.balance?
+      row(:account) if customer.account?
+      row(:birthday) if customer.birthday?
     end
   end
 
