@@ -1,2 +1,5 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% if customer_signed_in? %>
+    <%= link_to("Sign out", destroy_customer_session_path, method: :delete) %>
+<% end %>
+<h1>Your balance</h1>
+<h1><%= current_customer.balance %></h1>
