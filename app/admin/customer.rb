@@ -24,6 +24,8 @@ ActiveAdmin.register Customer do
     actions
   end
 
+  filter :account
+  filter :birthday
 
   form :html => { :multipart=>true } do |f|
     f.inputs "Customer" do
