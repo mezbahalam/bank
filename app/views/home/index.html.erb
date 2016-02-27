@@ -1,5 +1,5 @@
 <% if customer_signed_in? %>
     <%= link_to("Sign out", destroy_customer_session_path, method: :delete) %>
+
+<h1>Your balance is $<%= current_customer.balance %></h1>
 <% end %>
-<h1>Your balance</h1>
-<h1><%#= current_customer.balance %></h1>

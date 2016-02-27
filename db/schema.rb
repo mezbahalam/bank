@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160226144120) do
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
 
   create_table "customers", force: :cascade do |t|
+    t.integer  "name"
     t.integer  "account"
     t.date     "birthday"
     t.integer  "secret"

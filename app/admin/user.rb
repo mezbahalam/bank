@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
   permit_params :email, :password, :password_confirmation
-
+  menu label: "Admins"
   index do
     selectable_column
     id_column
