@@ -6,6 +6,7 @@ class DeviseCreateCustomers < ActiveRecord::Migration
       t.date :birthday
       t.integer :secret
       t.float :balance
+      #, default: 0
       ## Database authenticatable
       t.string :email
       t.string :encrypted_password
