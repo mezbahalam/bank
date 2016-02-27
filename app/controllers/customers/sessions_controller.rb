@@ -1,5 +1,4 @@
 class Customers::SessionsController < Devise::SessionsController
- super
  # before_filter :configure_sign_in_params, only: [:create]
  #
  #
