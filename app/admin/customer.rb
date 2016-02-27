@@ -33,10 +33,10 @@ ActiveAdmin.register Customer, as: "client" do
 
   show do
     attributes_table do
-      row(:name) if customer.name?
-      row(:balance) if customer.balance?
-      row(:account) if customer.account?
-      row(:birthday) if customer.birthday?
+      row(:name) if client.name?
+      row(:balance) if client.balance?
+      row(:account) if client.account?
+      row(:birthday) if client.birthday?
     end
   end
 
