@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root 'home#index'
-  devise_for :customers, :controllers => { :registrations => "registrations",sessions: 'customers/sessions' }
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  devise_for :customers, :controllers => { :registrations => "registrations", sessions: 'customers/sessions' }
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
