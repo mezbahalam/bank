@@ -1,8 +1,5 @@
 ActiveAdmin.register Customer, as: "client" do
 
- before_save do |f|
-  f.date
- end
 
   permit_params :name, :account, :balance, :secret, :birthday, :password, :password_confirmation
 
@@ -43,10 +40,6 @@ ActiveAdmin.register Customer, as: "client" do
   end
 
 
-  after_update do |client|
-    if client.save
-      ClientMailer.account_updated(client.name,client.balance,client.account,client.birthday).deliver
-    end
-  end
+
 
 end

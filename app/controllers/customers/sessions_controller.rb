@@ -13,9 +13,15 @@ class Customers::SessionsController < Devise::SessionsController
      y = params[:customer]["birthday(1i)"]
      m = params[:customer]["birthday(2i)"]
      d = params[:customer]["birthday(3i)"]
-     x = y + "-0" + m + "-0" + d
+     if m.to_i < 10
+       x = y + "-0" + m + "-0" + d
+     else
+       x = y + "-" + m + "-" + d
+     end
+
      @c = Customer.find_by_account(p)
      z = @c.birthday.to_s
+     #byebug
      if z == x
       super
      else
